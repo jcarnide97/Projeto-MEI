@@ -77,7 +77,7 @@ int main(int argc, char *argv[]) {
   int i, j, x, y, n, m, c;
   int a[NMAX];
   FILE *results;
-  results = fopen("test.txt", "a");
+  results = fopen("testes/test_code1.txt", "a");
 
   seed = atoi(argv[1]);
   max_time = atoi(argv[2]);	
