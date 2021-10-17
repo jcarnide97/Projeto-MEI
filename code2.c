@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
+#include<string.h>
 
 #define NMAX 300
 
@@ -12,6 +13,7 @@ int found;
 double cpu_time_used;
 clock_t start, end;
 int seed, max_time;
+char output[50];
 
 void shuffle(int n, int seed) {
    int i;
