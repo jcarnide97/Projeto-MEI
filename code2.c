@@ -74,6 +74,8 @@ double backtrack(int a[], int pos, int col, int n){
 int main(int argc, char *argv[]) {
   int i, j, x, y, n, m, c;
   int a[NMAX];
+  FILE *results;
+  results = fopen("test.txt", "a");
 
   /* n nodes, m edges */
 	
@@ -108,12 +110,16 @@ int main(int argc, char *argv[]) {
       cpu_time_used = backtrack(a,1,c,n);
       if (found == 1){   // found the minimum with c+1
 	printf("%d ",c);
-   	printf("%lf \n", cpu_time_used);	
+   	printf("%lf \n", cpu_time_used);
+      strcat(output, "\n");
+      fputs(output, results);		
 	break;
       }
       else if (found == -1) {   // amount of time exceeded
   	printf("-1 ");
-   	printf("%lf \n", cpu_time_used);	
+   	printf("%lf \n", cpu_time_used);
+      strcat(output, "\n");
+      fputs(output, results);		
 	break;
       }
    }

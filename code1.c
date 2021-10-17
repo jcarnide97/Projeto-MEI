@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
+#include<string.h>
 
 #define NMAX 300
 
@@ -12,6 +13,7 @@ int found;
 double cpu_time_used;
 clock_t start, end;
 int seed, max_time;
+char output[50];
 
 void shuffle(int n, int seed) {
    int i;
@@ -74,10 +76,12 @@ double backtrack(int a[], int pos, int col, int n){
 int main(int argc, char *argv[]) {
   int i, j, x, y, n, m, c;
   int a[NMAX];
+  FILE *results;
+  results = fopen("test.txt", "a");
 
-  seed = atoi(argv[1]);     // random seed
-  max_time = atoi(argv[2]); // tempo máximo de execução
-  fp = fopen(argv[3], "r"); // ficheiro input
+  seed = atoi(argv[1]);
+  max_time = atoi(argv[2]);	
+  fp = fopen(argv[3], "r");
   
   if (fp == NULL){
       perror("Error while opening the file.\n");
@@ -105,16 +109,21 @@ int main(int argc, char *argv[]) {
       a[0] = 1;
       cpu_time_used = backtrack(a,1,c,n);
       if (found == 0){   // found the minimum with c+1
-	printf("%d ",c+1);
-   	printf("%lf \n", cpu_time_used);	
+	   printf("%d ",c+1);
+   	printf("%lf \n", cpu_time_used);
+      snprintf(output, 50, "%f", cpu_time_used);
+      strcat(output, "\n");
+      fputs(output, results);	
 	break;
       }
       else if (found == -1) {   // amount of time exceeded
   	printf("-1 ");
    	printf("%lf \n", cpu_time_used);	
+      strcat(output, "\n");
+      fputs(output, results);	
 	break;
       }
    }
-
+   fclose(fp);
    return 0;
 }
