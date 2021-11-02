@@ -3,10 +3,10 @@ import sys
 
 def main():
     argv = sys.argv[1:]
-    n = int(argv[0])    # número de exames
-    p = float(argv[1])  # probabilidade de um aluno estar em 2 exames
-    s = int(argv[2])    # random seed
-    f = argv[3]         # file output
+    n = int(argv[0])
+    p = float(argv[1])
+    s = int(argv[2])
+    f = argv[3]
 
     random.seed(s)
 
