@@ -19,6 +19,6 @@ prob01 <- function(file_name, extra_name, g_name) {
   plot(code, pch=1, main=g_name, xlab='Número de exames', ylab='Tempo Necessário Slots', col=ifelse(code['X0.1.time']>=100, 'red', 'green'))
 }
 
-par(mfrow = c(1,2))
+par(mfrow = c(1,1))
 prob01("testes/csv/testes_code1.csv", "testes/csv/extra_code1_prob10.csv", "code1 - Prob = 0.1")
 prob01("testes/csv/testes_code2.csv", "testes/csv/extra_code2_prob10.csv", "code2 - Prob = 0.1")
