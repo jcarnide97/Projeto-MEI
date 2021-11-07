@@ -17,10 +17,30 @@ scatter <- function(file_name, extra_name, g_name) {
   print(summary(lm.out))
   plot(code, pch=1, main=g_name, xlab='Número de exames', ylab='Tempo Necessário Slots', col=ifelse(code['X0.1.1']>=100, 'red', 'green'))
   abline(lm.out)
-  media <- mean(code[,'X0.1.1'])
-  print(media)
 }
 
 par(mfrow = c(1,2))
 scatter("testes/csv/testes_code1.csv", "testes/csv/extra_code1_prob10.csv", "code1 - Prob = 0.1")
 scatter("testes/csv/testes_code2.csv", "testes/csv/extra_code2_prob10.csv", "code2 - Prob = 0.1")
+
+# Calculos feitos - manualmente ou através do excel
+# --------------------------------- code1  ---------------------------------
+# Valores práticos
+# -> r^2 = 0.7838
+# -> r = 0.8853
+# Valores teoricos:
+# -> SST = 734608.2366
+# -> SSE = 172546.637
+# -> SSR = 562061.5996
+# -> r^2 = 0.7651
+# -> r = 0,8747
+# --------------------------------- code2  ---------------------------------
+# Valores práticos
+# -> r^2 = 0.7718
+# -> r = 0.8785
+# Valores teoricos:
+# -> SST = 726135.643
+# -> SSE = 165540.9444
+# -> SSR = 560594.6986
+# -> r^2 = 0,7720
+# -> r = 0,8786
