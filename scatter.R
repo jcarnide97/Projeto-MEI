@@ -2,7 +2,7 @@ normalize <- function(x) {
   return ((x - min(x)) / (max(x) - min(x)))
 }
 
-scatter <- function(file_name, extra_name, g_name) {
+scatter <- function(file_name, extra_name, g_name, eq_reta) {
   csv <- read.table(file_name, header = TRUE, sep = ",")
   csv_extra <- read.table(extra_name, header = TRUE, sep = ",")
   code <- data.frame(exames=csv['Exames'], time=csv['X0.1.1'])
@@ -17,11 +17,12 @@ scatter <- function(file_name, extra_name, g_name) {
   print(summary(lm.out))
   plot(code, pch=1, main=g_name, xlab='Número de exames', ylab='Tempo Necessário Slots', col=ifelse(code['X0.1.1']>=100, 'red', 'green'))
   abline(lm.out)
+  text(60, 50, eq_reta)
 }
 
 par(mfrow = c(1,2))
-scatter("testes/csv/testes_code1.csv", "testes/csv/extra_code1_prob10.csv", "code1 - Prob = 0.1")
-scatter("testes/csv/testes_code2.csv", "testes/csv/extra_code2_prob10.csv", "code2 - Prob = 0.1")
+scatter("testes/csv/testes_code1.csv", "testes/csv/extra_code1_prob10.csv", "code1 - Prob = 0.1", "y = - 33.0219 + 1.50791x")
+scatter("testes/csv/testes_code2.csv", "testes/csv/extra_code2_prob10.csv", "code2 - Prob = 0.1", "y = - 33.2089 + 1.50633x")
 
 # Calculos feitos - manualmente ou através do excel
 # --------------------------------- code1  ---------------------------------
