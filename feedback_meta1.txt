@@ -1,0 +1,7 @@
+Feedback Meta 1 - Análise Exploratória de Dados
+- falar das seeds tambem nas execução
+- apresentar as tabelas como gráficos para ilustrar a regrassão
+- fazer logaritmo para aprentar uma melhor equação da reta
+- boxplots muito vagos, não diz nada - usar com diferentes probs ou exames
+- não faz sentido comparar time slots com tempo de execução
+"Precisa de uma mexida" Paquete 2021
