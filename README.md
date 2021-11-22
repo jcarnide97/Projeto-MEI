@@ -6,5 +6,7 @@ Escalonamento de Exames no DEI
 	- https://www.overleaf.com/5295336655wykvzfpdhsrg
 
 - Meta 2: Pré-registo das hipóteses
+	- https://www.overleaf.com/9756974695bcngmcdrftmw
 
 - Meta 3: Teste das hipóteses
+	- https://www.overleaf.com/2157468323bvrgxvknvvrb
