@@ -10,3 +10,5 @@ Escalonamento de Exames no DEI
 
 - Meta 3: Teste das hipóteses
 	- https://www.overleaf.com/2157468323bvrgxvknvvrb
+	- https://docs.google.com/spreadsheets/d/1spJ0VbXA6puba8irQMYVhM_kzsGUgOkpABAdSD-SBSY/edit?usp=sharing
+	- https://docs.google.com/document/d/1lvAIilRwune_ogAWMqdLVPzBSJypMEgg6_GudUqtXo0/edit?usp=sharing		
