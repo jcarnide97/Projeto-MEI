@@ -50,7 +50,7 @@ ttest <- function(file_name) {
   diff <- code1 - code2
   qqnorm(diff)
   qqline(diff)
-  print(t.test(code1, code2, paired = TRUE, conf.level = 0.9))
+  print(t.test(code1, code2, paired = TRUE, conf.level = 0.95))
 }
 
 ttest2 <- function(file_name) {
@@ -71,16 +71,9 @@ ttest2 <- function(file_name) {
   print(t)
 }
 
-ttest2("testes/hipotese1/h1_30ex30prob_input1.csv")
-ttest2("testes/hipotese1/h1_30ex30prob_input2.csv")
-ttest2("testes/hipotese1/h1_30ex30prob_input3.csv")
-ttest2("testes/hipotese1/h1_40ex10prob_input1.csv")
-ttest2("testes/hipotese1/h1_40ex10prob_input2.csv")
-ttest2("testes/hipotese1/h1_40ex10prob_input3.csv")
-
-anova_test("testes/hipotese1/h1_30ex30prob_input1.csv")
-anova_test("testes/hipotese1/h1_30ex30prob_input2.csv")
-anova_test("testes/hipotese1/h1_30ex30prob_input3.csv")
-anova_test("testes/hipotese1/h1_40ex10prob_input1.csv")
-anova_test("testes/hipotese1/h1_40ex10prob_input2.csv")
-anova_test("testes/hipotese1/h1_40ex10prob_input3.csv")
+ttest("testes/hipotese1/h1_30ex30prob_input1.csv")
+ttest("testes/hipotese1/h1_30ex30prob_input2.csv")
+ttest("testes/hipotese1/h1_30ex30prob_input3.csv")
+ttest("testes/hipotese1/h1_40ex10prob_input1.csv")
+ttest("testes/hipotese1/h1_40ex10prob_input2.csv")
+ttest("testes/hipotese1/h1_40ex10prob_input3.csv")
