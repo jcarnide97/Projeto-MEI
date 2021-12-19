@@ -10,10 +10,10 @@ echo "input2 done"
 python gen.py 30 0.3 3248 testes/hipotese1/exams30input3/gen_input3.in
 echo "input3 done"
 
-echo A gerar inputs com 50 exames e prob 0.1
-python gen.py 50 0.1 5832 testes/hipotese1/exams50input1/gen_input1.in
+echo A gerar inputs com 40 exames e prob 0.1
+python gen.py 40 0.1 5832 testes/hipotese1/exams40input1/gen_input1.in
 echo "input1 done"
-python gen.py 50 0.1 5485 testes/hipotese1/exams50input2/gen_input2.in
+python gen.py 40 0.1 5485 testes/hipotese1/exams40input2/gen_input2.in
 echo "input2 done"
-python gen.py 50 0.1 7128 testes/hipotese1/exams50input3/gen_input3.in
+python gen.py 40 0.1 7128 testes/hipotese1/exams40input3/gen_input3.in
 echo "input3 done"
