@@ -8,40 +8,24 @@ scatter <- function(file_name, extra_name, g_name, eq_reta) {
   code <- data.frame(exames=csv['Exames'], time=csv['X0.1.1'])
   code_extra <- data.frame(exames=csv_extra['Exames'], time=csv_extra['X0.1.1'])
   code <- rbind(code, code_extra)
-  # Normalization - same shit tbh
-  #v_exames <- as.vector(code['Exames'])
-  #v_time <- as.vector(code['X0.1.1'])
-  #v_time <- normalize(v_time)
-  #code.data <- data.frame(v_exames, v_time)
-  lm.out = lm(code$X0.1.1~code$Exames)
+  code$logtime = log(code$X0.1.1)
+  lm.out = lm(code$logtime~code$Exames)
   print(summary(lm.out))
-  plot(code, pch=1, main=g_name, xlab='Número de exames', ylab='Tempo Necessário Slots', col=ifelse(code['X0.1.1']>=100, 'red', 'green'))
+  plot(code$Exames,code$logtime, main = g_name, xlab = 'Número de Exames', ylab = 'log(Tempo Execução)')
   abline(lm.out)
   text(60, 50, eq_reta)
 }
 
 par(mfrow = c(1,2))
-scatter("testes/csv/testes_code1.csv", "testes/csv/extra_code1_prob10.csv", "code1 - Prob = 0.1", "y = - 33.0219 + 1.50791x")
-scatter("testes/csv/testes_code2.csv", "testes/csv/extra_code2_prob10.csv", "code2 - Prob = 0.1", "y = - 33.2089 + 1.50633x")
+scatter("testes/csv/testes_code1.csv", "testes/csv/extra_code1_prob10.csv", "code1 - Prob = 0.1", "y = -10.011334 + 0.177518x")
+scatter("testes/csv/testes_code2.csv", "testes/csv/extra_code2_prob10.csv", "code2 - Prob = 0.1", "y = -10.609950 + 0.185835x")
 
 # Calculos feitos - manualmente ou através do excel
 # --------------------------------- code1  ---------------------------------
 # Valores práticos
-# -> r^2 = 0.7838
-# -> r = 0.8853
-# Valores teoricos:
-# -> SST = 734608.2366
-# -> SSE = 172546.637
-# -> SSR = 562061.5996
-# -> r^2 = 0.7651
-# -> r = 0,8747
+# -> r^2 = 0.795
+# -> r = 0.8916277
 # --------------------------------- code2  ---------------------------------
 # Valores práticos
-# -> r^2 = 0.7718
-# -> r = 0.8785
-# Valores teoricos:
-# -> SST = 726135.643
-# -> SSE = 165540.9444
-# -> SSR = 560594.6986
-# -> r^2 = 0,7720
-# -> r = 0,8786
+# -> r^2 = 0.8128
+# -> r = 0.9015542

@@ -6,6 +6,8 @@ boxcode <- function(file_name, title) {
     janela <- c(0,2)
   }
   boxplot(Time ~ Code, data = csv, ylim=janela, main = title)
+  aov.out = aov(Time~Code, data = csv)
+  print(shapiro.test(aov.out$residuals))
 }
 par(mfrow = c(1,2))
 boxcode("testes/hipotese1/h1_30ex30prob_input1_box.csv", "Boxplot Samples 1 - 30 Exames/Prob 0.3")
