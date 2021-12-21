@@ -1,34 +1,35 @@
-prob01 <- function(file_name, extra_name, g_name) {
+prob01 <- function(file_name, extra_name10,  extra_name30, extra_name50, extra_name70, extra_name90, g_name) {
   csv <- read.csv(file_name)
-  colnames(csv)[2] <- "0.1 slots"
-  colnames(csv)[3] <- "0.1 time"
-  colnames(csv)[4] <- "0.3 slots"
-  colnames(csv)[5] <- "0.3 time"
-  colnames(csv)[6] <- "0.5 slots"
-  colnames(csv)[7] <- "0.5 time"
-  colnames(csv)[8] <- "0.7 slots"
-  colnames(csv)[9] <- "0.7 time"
-  colnames(csv)[10] <- "0.9 slots"
-  colnames(csv)[11] <- "0.9 time"
-  csv_extra <- read.csv(extra_name)
-  colnames(csv_extra)[2] <- "0.5 slots"
-  colnames(csv_extra)[3] <- "0.5 time"
-  code10 <- data.frame(exames=csv['Exames'], time=csv['0.1 time'])
-  code30 <- data.frame(exames=csv['Exames'], time=csv['0.3 time'])
-  code50 <- data.frame(exames=csv['Exames'], time=csv['0.5 time'])
-  code70 <- data.frame(exames=csv['Exames'], time=csv['0.7 time'])
-  code_extra <- data.frame(exames=csv_extra['Exames'], time=csv_extra['0.5 time'])
-  #code <- rbind(code, code_extra)
-  boxplot(code10[151:180,'X0.1.time'], main="20 Exames")
-  boxplot(code30[31:60,'X0.3.time'], main="20 Exames")
-  boxplot(code50[61:90,'X0.5.time'], main="30 Exames")
-  boxplot(code70[91:120,'X0.7.time'], main="40 Exames")
-  #boxplot(code[151:180,'X0.7.time'], main="60 Exames")
-  #boxplot(code[181:210,'X0.7.time'], main="70 Exames")
+  csv_extra10 <- read.csv(extra_name10)
+  csv_extra30 <- read.csv(extra_name30)
+  csv_extra50 <- read.csv(extra_name50)
+  csv_extra70 <- read.csv(extra_name70)
+  csv_extra90 <- read.csv(extra_name90)
+  code10 <- data.frame(exames=csv['Exames'], time=csv['X0.1.1'])
+  code30 <- data.frame(exames=csv['Exames'], time=csv['X0.3.1'])
+  code50 <- data.frame(exames=csv['Exames'], time=csv['X0.5.1'])
+  code70 <- data.frame(exames=csv['Exames'], time=csv['X0.7.1'])
+  code90 <- data.frame(exames=csv['Exames'], time=csv['X0.9.1'])
+  code_extra10 <- data.frame(exames=csv_extra10['Exames'], time=csv_extra10['X0.1.1'])
+  code_extra30 <- data.frame(exames=csv_extra30['Exames'], time=csv_extra30['X0.3.1'])
+  code_extra50 <- data.frame(exames=csv_extra50['Exames'], time=csv_extra50['X0.5.1'])
+  code_extra70 <- data.frame(exames=csv_extra70['Exames'], time=csv_extra70['X0.7.1'])
+  code_extra90 <- data.frame(exames=csv_extra90['Exames'], time=csv_extra90['X0.9.1'])
+  code10 <- rbind(code10, code_extra10)
+  code30 <- rbind(code30, code_extra30)
+  code50 <- rbind(code50, code_extra50)
+  code70 <- rbind(code70, code_extra70)
+  code90 <- rbind(code90, code_extra90)
+  boxplot(code10[1:300,'X0.1.1'], main="0.1 prob", ylab='Tempo de execução')
+  boxplot(code30[1:300,'X0.3.1'], main="0.3 prob", ylab='Tempo de execução')
+  boxplot(code50[1:300,'X0.5.1'], main="0.5 prob", ylab='Tempo de execução')
+  boxplot(code70[1:300,'X0.7.1'], main="0.7 prob", ylab='Tempo de execução')
+  boxplot(code90[1:300,'X0.9.1'], main="0.9 prob", ylab='Tempo de execução')
   #plot(code, pch=1, main=g_name, xlab='N?mero de exames', ylab='Tempo Necess?rio Slots', col=ifelse(code['X0.1.time']>=100, 'red', 'green'))
 }
 
 par(mfrow = c(1, 5))
-prob01("testes/csv/testes_code1.csv", "testes/csv/extra_code1_prob50.csv", "code1 - Prob = 0.5")
+prob01("testes/csv/testes_code1.csv", "testes/csv/extra_code1_prob10.csv", "testes/csv/extra_code1_prob30.csv",  "testes/csv/extra_code1_prob50.csv",  "testes/csv/extra_code1_prob70.csv", "testes/csv/extra_code1_prob90.csv", "code1 - Prob = 0.5")
 #prob01("testes/csv/testes_code2.csv", "testes/csv/extra_code2_prob10.csv", "code2 - Prob = 0.3")
+
 
