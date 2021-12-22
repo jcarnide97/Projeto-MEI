@@ -11,9 +11,9 @@ scatter <- function(file_name, extra_name, g_name, eq_reta) {
   code$logtime = log(code$X0.1.1)
   lm.out = lm(code$logtime~code$Exames)
   print(summary(lm.out))
-  plot(code$Exames,code$logtime, main = g_name, xlab = 'Número de Exames', ylab = 'log(Tempo Execução)')
-  abline(lm.out)
-  text(60, 50, eq_reta)
+  plot(code$Exames, code$X0.1.1, main = g_name, xlab = 'Número de Exames', ylab = "Tempo de Execução", col=ifelse(code['X0.1.1']>=100, 'red', 'green'))
+  #plot(code$Exames,code$logtime, main = g_name, xlab = 'Número de Exames', ylab = 'log(Tempo Execução)')
+  #abline(lm.out)
 }
 
 par(mfrow = c(1,2))
@@ -25,6 +25,7 @@ scatter("testes/csv/testes_code2.csv", "testes/csv/extra_code2_prob10.csv", "cod
 # Valores práticos
 # -> r^2 = 0.795
 # -> r = 0.8916277
+# y = 
 # --------------------------------- code2  ---------------------------------
 # Valores práticos
 # -> r^2 = 0.8128
