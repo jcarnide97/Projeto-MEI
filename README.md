@@ -12,3 +12,6 @@ Escalonamento de Exames no DEI
 	- https://www.overleaf.com/2157468323bvrgxvknvvrb
 	- https://docs.google.com/spreadsheets/d/1spJ0VbXA6puba8irQMYVhM_kzsGUgOkpABAdSD-SBSY/edit?usp=sharing
 	- https://docs.google.com/document/d/1lvAIilRwune_ogAWMqdLVPzBSJypMEgg6_GudUqtXo0/edit?usp=sharing		
+
+- Apresentação para a defesa
+	- https://docs.google.com/presentation/d/1W6YQJUl3lqJQ2auHkQUGT9wEQ8A3rmUCx09lrKJ-tek/edit?usp=sharing
